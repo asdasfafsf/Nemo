@@ -1,13 +1,22 @@
 {
   "name": "nemo",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "바다를 헤엄치는 스크래핑 워커",
   "type": "module",
+  "main": "dist/nemo.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.8.2",
+    "vite": "^5.1.4"
+  }
 }
