@@ -9,15 +9,19 @@
     "build": "vite build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "ts-patch install"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "typia": "^8.0.3"
   },
   "devDependencies": {
+    "@ryoppippi/unplugin-typia": "npm:@jsr/ryoppippi__unplugin-typia@^1.2.0",
     "@types/node": "^20.11.24",
+    "ts-patch": "^3.3.0",
     "typescript": "^5.8.2",
     "vite": "^5.1.4",
     "vitest": "^3.0.9"
