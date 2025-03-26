@@ -18,7 +18,8 @@ const rawEnv = {
     bucketName: process.env.S3_BUCKET_NAME,
     region: process.env.S3_REGION,
     endpoint: process.env.S3_ENDPOINT,
-  }
+  },
+  scriptRootPath: process.env.SCRIPT_ROOT_PATH,
 };
 
 // Typia로 환경 변수 검증

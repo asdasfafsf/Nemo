@@ -5,5 +5,6 @@ export type EnvConfig = {
       bucketName: string;
       region: string;
       endpoint: string;
-    }
+    },
+    scriptRootPath: string;
   }
