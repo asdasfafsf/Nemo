@@ -11,7 +11,16 @@ export default defineConfig({
       name: 'nemo',
       fileName: 'nemo'
     },
-    target: 'node',
+    target: 'node22',
+    rollupOptions: {
+      external: [
+        'path',
+        'fs',
+        'os',
+        'crypto',
+        'dotenv',
+      ]
+    }
   },
   optimizeDeps: {
     noDiscovery: true,
