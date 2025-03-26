@@ -86,8 +86,8 @@ export const getLastModified = async ({fileName}: {fileName: string}) => {
         const result = await s3Client.send(command);
         return result.LastModified ?? null;
     } catch (e) {
-        const metadata = (e as any).$metadata;
-        if (metadata.httpStatusCode === 404) {
+        const metadata = (e as any)?.$metadata;
+        if (metadata?.httpStatusCode === 404) {
             throw new NemoError(RESPONSE_PAIR.INVALID_SCRIPT_ID);
         }
         throw new NemoError(RESPONSE_PAIR.ERROR);
