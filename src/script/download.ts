@@ -80,7 +80,7 @@ export const downloadScript = async ({key1, key2}: {key1: string, key2: string})
             }
             
             // 재시도 전 잠시 대기 (지수 백오프)
-            const waitTime = Math.min(1000 * Math.pow(2, retries), 10000);
+            const waitTime = 1000;
             await new Promise(resolve => setTimeout(resolve, waitTime));
         }
     }
