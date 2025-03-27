@@ -33,7 +33,6 @@ export const needDownload = async (
             return !(await isExistScript({key1, key2}));
         }
     } catch (e) {
-        console.error(e);
         return true;
     }
    
