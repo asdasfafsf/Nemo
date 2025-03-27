@@ -10,7 +10,19 @@ export default defineConfig({
   
   test: {
     environment: 'node',
-    include: ['**/*.test.ts']
+    include: ['**/*.test.ts'],
+    coverage: {
+      provider: 'v8',  // 또는 'istanbul'
+      reporter: ['text', 'json', 'html'],
+      exclude: [
+          'node_modules/',
+          'test/',
+          '**/*.test.ts',
+          'dist/',
+          'vite.config.ts',
+          'vitest.config.ts'
+      ]
+  }
   },
   
   optimizeDeps: {
