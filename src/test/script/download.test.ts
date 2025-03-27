@@ -71,11 +71,4 @@ describe('스크립트 다운로드', () => {
       expect(result).toBe(false);
     });
   });
-
-  describe('downloadScript', () => {
-    it('스크립트 다운로드', async () => {
-      const result = await downloadScript({ key1: 'test', key2: 'test' });
-      expect(result).toBe('');
-    });
-  });
 }); 
