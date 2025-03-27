@@ -35,6 +35,9 @@ export const RESPONSE_CODE = {
     INVALID_FORMAT: '1008',                     // 잘못된 데이터 형식
     REQUEST_TOO_LARGE: '1009',                  // 요청 데이터 크기 초과
     
+    // 스크립트 관련 오류
+    SCRIPT_DOWNLOAD_ERROR: '2000',              // 스크립트 다운로드 실패
+    
     // 스크래핑 엔진 오류 (4000번대)
     SCRAPING_ENGINE_ERROR: '4000',
     SCRAPING_ENGINE_ABNORMAL_TERMINATION: '4001',
@@ -67,6 +70,9 @@ export const RESPONSE_MESSAGES = {
     [RESPONSE_CODE.INVALID_FORMAT]: '데이터 형식이 올바르지 않습니다. 입력 형식을 확인해 주세요.',
     [RESPONSE_CODE.REQUEST_TOO_LARGE]: '요청 데이터가 너무 큽니다. 더 작은 단위로 나누어 요청해 주세요.',
     
+    // 스크립트 관련 오류 메시지
+    [RESPONSE_CODE.SCRIPT_DOWNLOAD_ERROR]: '스크립트를 다운로드하는 중 문제가 발생했습니다. 네트워크 연결을 확인해 주세요.',
+    
     // 스크래핑 엔진 오류 메시지 (4000번대)
     [RESPONSE_CODE.SCRAPING_ENGINE_ERROR]: '정보 수집 중 문제가 발생했습니다. 다시 시도해 볼까요?',
     [RESPONSE_CODE.SCRAPING_ENGINE_ABNORMAL_TERMINATION]: '정보 수집 도중 갑자기 중단되었습니다. 잠시 후 다시 시도해 주세요.',
@@ -97,6 +103,9 @@ export const RESPONSE_TECH_MESSAGES = {
     [RESPONSE_CODE.RATE_LIMIT_EXCEEDED]: '요청 빈도 제한 초과',
     [RESPONSE_CODE.INVALID_FORMAT]: '잘못된 데이터 형식',
     [RESPONSE_CODE.REQUEST_TOO_LARGE]: '요청 크기 초과',
+    
+    // 스크립트 관련 기술 메시지
+    [RESPONSE_CODE.SCRIPT_DOWNLOAD_ERROR]: '스크립트 다운로드 실패 - 네트워크 연결 오류',
     
     // 스크래핑 엔진 오류 기술 메시지 (4000번대)
     [RESPONSE_CODE.SCRAPING_ENGINE_ERROR]: '스크래핑 엔진 일반 오류',
