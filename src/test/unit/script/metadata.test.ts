@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { isExistMetadata, readMetadata } from '../../script/metadata';
-import * as fileUtils from '../../utils/file';
+import { isExistMetadata, readMetadata } from '../../../script/metadata';
+import * as fileUtils from '../../../utils/file';
 
 describe('메타데이터 처리', () => {
   // 테스트 전후 처리

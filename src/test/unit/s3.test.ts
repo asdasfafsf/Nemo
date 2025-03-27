@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import crypto from 'crypto';
-import { uploadFile, downloadFile, getLastModified } from '../s3';
-import { RESPONSE_PAIR } from '../constants';
+import { uploadFile, downloadFile, getLastModified } from '../../s3';
+import { RESPONSE_PAIR } from '../../constants';
 
 describe('S3 operations', () => {
   it('should upload file to s3 and get it back correctly', async () => {

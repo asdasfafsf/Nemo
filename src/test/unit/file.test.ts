@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { isExist, readFile, writeFile } from '../utils/file';
+import { isExist, readFile, writeFile } from '../../utils/file';
 import fs from 'fs/promises';
 
 // fs 모듈 모킹

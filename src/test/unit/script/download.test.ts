@@ -1,8 +1,8 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { needDownload, downloadScript } from '../../script/download';
-import * as metadataModule from '../../script/metadata';
-import * as scriptModule from '../../script/script';
-import * as s3Module from '../../s3';
+import { needDownload, downloadScript } from '../../../script/download';
+import * as metadataModule from '../../../script/metadata';
+import * as scriptModule from '../../../script/script';
+import * as s3Module from '../../../s3';
 
 describe('스크립트 다운로드', () => {
   // 테스트 전후 처리

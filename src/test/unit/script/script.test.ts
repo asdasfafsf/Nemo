@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { isExistScript, readScript } from '../../script/script';
-import * as fileUtils from '../../utils/file';
+import { isExistScript, readScript } from '../../../script/script';
+import * as fileUtils from '../../../utils/file';
 
 describe('스크립트 파일 처리', () => {
   // 테스트 전후 처리
