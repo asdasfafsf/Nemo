@@ -3,9 +3,14 @@ import typia from "typia";
 export type Request<T> = {
     key1: string;
     key2: string;
+    config: RequestConfig;
     data: T;
 }
 
+export type RequestConfig = {
+    timeout?: typia.tags.Minimum<1000> & typia.tags.Maximum<300000>;
+    memory?: typia.tags.Minimum<1> & typia.tags.Maximum<1000>;
+}
 
 
 export type Response<T> = {
