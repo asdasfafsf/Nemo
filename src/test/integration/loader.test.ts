@@ -7,8 +7,8 @@ import { RESPONSE_PAIR } from '../../constants';
 
 describe('loadScript', () => {
   it('스크립트 로드', async () => {
-    await loadScript({ key1: 'test', key2: 'test' });
-    expect(downloadScript).toHaveBeenCalledWith({ key1: 'test', key2: 'test' });
+    await loadScript({ key1: 'test1', key2: 'test1' });
+    expect(downloadScript).toHaveBeenCalledWith({ key1: 'test1', key2: 'test1' });
   });
 
   it('스크립트 로드 실패', async () => {
