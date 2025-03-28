@@ -7,7 +7,7 @@ describe('S3 operations', () => {
   it('should upload file to s3 and get it back correctly', async () => {
     // 동적 파일 내용 생성
     const randomContent = crypto.randomBytes(64).toString('hex');
-    const fileName = `test-${Date.now()}.txt`;
+    const fileName = `test.txt`;
     
     // 파일 업로드
     const uploadResult = await uploadFile({fileName, content: randomContent});
