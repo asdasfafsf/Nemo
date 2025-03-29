@@ -39,7 +39,8 @@ export const uploadFile = async ({
             Body: content,
             ContentType: contentType,
             ACL: acl,
-    });
+        });
+        
 
         const result = await s3Client.send(command);
         return result;
