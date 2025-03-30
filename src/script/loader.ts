@@ -13,4 +13,4 @@ export const loadScript = async ({key1, key2}: {key1: string, key2: string}) => 
     if (need) {
         await downloadScript({key1, key2});
     } 
-}; 
+};
