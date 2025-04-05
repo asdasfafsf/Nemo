@@ -32,7 +32,10 @@ export const executeScript = async (request: Request<any>): Promise<Response<any
             if (typia.is<Response<any>>(data)) {
                 resolve(data);
             } else {
-                
+                resolve({
+                    ...RESPONSE_PAIR.INVALID_OUTPUT_FORMAT,
+                    data: null
+                })
             }
         });
         script.stderr.on('data', (data) => {
