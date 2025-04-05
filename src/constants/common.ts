@@ -34,7 +34,8 @@ export const RESPONSE_CODE = {
     RATE_LIMIT_EXCEEDED: '1007',                // 요청 빈도 제한 초과
     INVALID_FORMAT: '1008',                     // 잘못된 데이터 형식
     REQUEST_TOO_LARGE: '1009',                  // 요청 데이터 크기 초과
-    
+    INVALID_OUTPUT_FORMAT : '1010',              // 잘못된 출력 형식
+
     // 스크립트 관련 오류
     SCRIPT_DOWNLOAD_ERROR: '2000',              // 스크립트 다운로드 실패
     
@@ -49,6 +50,7 @@ export const RESPONSE_CODE = {
     SCRAPING_ENGINE_INCONSISTENT_STATE: '4007',
     SCRAPING_ENGINE_BROWSER_CRASH: '4008',
     SCRAPING_ENGINE_NETWORK_DISRUPTION: '4009',
+    SCRAPING_ENGINE_UNDEFINED_NEMO: '4010', 
     
     // 일반 오류
     ERROR: '9999',
@@ -69,6 +71,7 @@ export const RESPONSE_MESSAGES = {
     [RESPONSE_CODE.RATE_LIMIT_EXCEEDED]: '요청이 너무 많습니다. 잠시 후에 다시 시도해 주세요.',
     [RESPONSE_CODE.INVALID_FORMAT]: '데이터 형식이 올바르지 않습니다. 입력 형식을 확인해 주세요.',
     [RESPONSE_CODE.REQUEST_TOO_LARGE]: '요청 데이터가 너무 큽니다. 더 작은 단위로 나누어 요청해 주세요.',
+    [RESPONSE_CODE.INVALID_OUTPUT_FORMAT]: '출력 형식이 올바르지 않습니다.',
     
     // 스크립트 관련 오류 메시지
     [RESPONSE_CODE.SCRIPT_DOWNLOAD_ERROR]: '스크립트를 다운로드하는 중 문제가 발생했습니다. 네트워크 연결을 확인해 주세요.',
@@ -84,7 +87,8 @@ export const RESPONSE_MESSAGES = {
     [RESPONSE_CODE.SCRAPING_ENGINE_INCONSISTENT_STATE]: '정보 수집 중 내부 상태가 일관성을 잃었습니다. 새로운 작업으로 다시 시작해 보세요.',
     [RESPONSE_CODE.SCRAPING_ENGINE_BROWSER_CRASH]: '웹 브라우저가 갑자기 종료되었습니다. 사이트가 너무 무거운 콘텐츠를 포함하고 있을 수 있습니다.',
     [RESPONSE_CODE.SCRAPING_ENGINE_NETWORK_DISRUPTION]: '인터넷 연결이 불안정하여 정보 수집이 중단되었습니다. 네트워크 상태를 확인해 주세요.',
-    
+    [RESPONSE_CODE.SCRAPING_ENGINE_UNDEFINED_NEMO]: '스크립트에 nemo 함수가 정의되지 않았습니다.',
+
     [RESPONSE_CODE.ERROR]: '죄송합니다, 예상치 못한 문제가 발생했습니다. 나중에 다시 시도해 주세요.',
 } as const;
 
@@ -103,6 +107,7 @@ export const RESPONSE_TECH_MESSAGES = {
     [RESPONSE_CODE.RATE_LIMIT_EXCEEDED]: '요청 빈도 제한 초과',
     [RESPONSE_CODE.INVALID_FORMAT]: '잘못된 데이터 형식',
     [RESPONSE_CODE.REQUEST_TOO_LARGE]: '요청 크기 초과',
+    [RESPONSE_CODE.INVALID_OUTPUT_FORMAT]: '잘못된 출력 형식',
     
     // 스크립트 관련 기술 메시지
     [RESPONSE_CODE.SCRIPT_DOWNLOAD_ERROR]: '스크립트 다운로드 실패 - 네트워크 연결 오류',
@@ -118,7 +123,7 @@ export const RESPONSE_TECH_MESSAGES = {
     [RESPONSE_CODE.SCRAPING_ENGINE_INCONSISTENT_STATE]: '스크래핑 엔진 내부 상태 불일치',
     [RESPONSE_CODE.SCRAPING_ENGINE_BROWSER_CRASH]: '브라우저 프로세스 충돌',
     [RESPONSE_CODE.SCRAPING_ENGINE_NETWORK_DISRUPTION]: '네트워크 연결 중단',
-    
+    [RESPONSE_CODE.SCRAPING_ENGINE_UNDEFINED_NEMO]: '스크립트에 nemo 함수가 정의되지 않았습니다.',
     [RESPONSE_CODE.ERROR]: '일반 오류',
 } as const;
 
