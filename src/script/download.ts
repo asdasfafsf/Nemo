@@ -20,13 +20,15 @@ export const needDownload = async (
 ): Promise<boolean> => {
     try {
         const hasMetaData = await isExistMetadata({key1, key2});
+
         if (hasMetaData) {
             const metadata = await readMetadata({key1, key2});
+
             if (!typia.is<Date>(metadata.lastModified)) {
                 return true;
             }
+            const modified = await getLastModified({fileName: `script/${key1}.js`});   
 
-            const modified = await getLastModified({fileName: key1});   
             if (!modified 
                 || !typia.is<Date>(modified) 
                 || modified.getTime() > metadata.lastModified.getTime()
@@ -65,11 +67,12 @@ export const downloadScript = async ({key1, key2}: {key1: string, key2: string})
             
             await writeFile(`${env.scriptRootPath}/${key1}.js`, content);
             await writeFile(`${env.scriptRootPath}/${key1}.metadata`, JSON.stringify({
-                lastModified: result.LastModified ?? new Date(1970, 1, 1)
+                lastModified: (result.LastModified ?? new Date(1970, 1, 1))
             }));
             return content;
         } catch (error: any) {
             retries++;
+            console.log('error', error);
             
             if (retries >= MAX_RETRIES) {
                 if (error instanceof NemoError) {
