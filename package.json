@@ -22,6 +22,7 @@
     "@samchon/openapi": "^3.3.0",
     "axios": "^1.8.4",
     "dotenv": "^16.4.7",
+    "fastify": "^5.2.2",
     "typia": "^8.2.0"
   },
   "devDependencies": {
