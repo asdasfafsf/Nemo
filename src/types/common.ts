@@ -8,8 +8,8 @@ export type Request<T> = {
 }
 
 export type RequestConfig = {
-    timeout?: typia.tags.Minimum<1000> & typia.tags.Maximum<300000>;
-    memory?: typia.tags.Minimum<1> & typia.tags.Maximum<1000>;
+    timeout?: number & typia.tags.Minimum<1000> & typia.tags.Maximum<300000>;
+    memory?: number & typia.tags.Minimum<1> & typia.tags.Maximum<1000>;
 }
 
 
@@ -23,7 +23,7 @@ export type Response<T> = {
 
 export type ResponseCode = 
     typeof RESPONSE_CODE[keyof typeof RESPONSE_CODE]
-    | (typia.tags.Pattern<"^[1][0-9]{4}$"> & 
+    & (typia.tags.Pattern<"^[1][0-9]{4}$"> & 
     typia.tags.MinLength<5> & 
     typia.tags.MaxLength<5>);
 export type ResponseMessage = string;
