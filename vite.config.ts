@@ -1,15 +1,21 @@
 import UnpluginTypia from '@ryoppippi/unplugin-typia/vite'
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+
 export default defineConfig({
   plugins: [
     UnpluginTypia({ /* options */ })
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      // 여러 진입점 설정
+      entry: {
+        nemo: resolve(__dirname, 'src/index.ts'),
+        worker: resolve(__dirname, 'src/script/worker.ts')
+      },
       name: 'nemo',
-      fileName: 'nemo'
+      formats: ['es'],
+      fileName: (format, entryName) => `${entryName}.js`
     },
     target: 'node22',
     rollupOptions: {
