@@ -10,6 +10,9 @@ const envFile = process.env.NODE_ENV === 'production'
 
 dotenv.config({ path: envFile });
 
+console.log('야야야')
+console.log(process.env.NODE_ENV);
+
 // 환경 변수 객체 생성
 const rawEnv = {
   S3: {
@@ -20,7 +23,7 @@ const rawEnv = {
     endpoint: process.env.S3_ENDPOINT,
   },
   scriptRootPath: process.env.SCRIPT_ROOT_PATH,
-  serverPort: process.env.SERVER_PORT,
+  serverPort: Number(process.env.SERVER_PORT),
 };
 
 // Typia로 환경 변수 검증

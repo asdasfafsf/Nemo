@@ -6,6 +6,7 @@
   "main": "dist/nemo.js",
   "scripts": {
     "dev": "vite build --watch",
+    "dev:server": "cross-env NODE_ENV=development concurrently \"vite build --watch\" \"nodemon --watch dist dist/server.js\"",
     "build": "vite build",
     "coverage": "vitest run --coverage",
     "test": "vitest run",
@@ -30,6 +31,7 @@
     "@types/node": "^20.17.30",
     "@vitest/coverage-v8": "^3.1.1",
     "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
     "ts-patch": "^3.3.0",

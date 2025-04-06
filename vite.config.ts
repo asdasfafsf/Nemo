@@ -26,6 +26,7 @@ export default defineConfig({
         'os',
         'crypto',
         'dotenv',
+        'fastify',
       ]
     }
   },
