@@ -6,20 +6,16 @@ import env from '../../config/env';
 describe('worker.ts 통합 테스트', () => {
   // 경로 설정
   const scriptPath = env.scriptRootPath || '/Users/han-wongeun/Desktop/workspace/node/nemo/src/script';
-  const workerTsPath = path.resolve('./src/script/worker.ts');
+  const workerTsPath = path.resolve('./dist/worker.js');
   
-
-  console.log('야도데체오9그러냐??', workerTsPath)
   it('스크립트를 실행하고 결과를 반환해야 함', async () => {
     // 테스트 데이터
     const testData = { key: 'value', number: 123 };
     
-    // worker.js 실행 및 결과 수집 함수
     const runWorker = () => {
       return new Promise<any>((resolve, reject) => {
         // 컴파일된 worker.js 실행 (환경 변수 설정)
-        const worker = spawn('ts-node', [
-          '--esm',  // ESM 모드 지원 플래그 추가
+        const worker = spawn('node', [
           workerTsPath,
           'test1',
           'testAction',
