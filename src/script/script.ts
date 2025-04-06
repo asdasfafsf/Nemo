@@ -11,7 +11,9 @@ import { isExist, readFile } from "../utils/file";
 export const isExistScript = async ({key1, key2}: {key1: string, key2: string}) => {
     const scriptRootPath = env.scriptRootPath;
     const scriptPath = `${scriptRootPath}/${key1}.js`;
-    return await isExist(scriptPath);
+    const hasFile = await isExist(scriptPath);
+
+    return hasFile;
 }
 
 /**
