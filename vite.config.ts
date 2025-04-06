@@ -30,6 +30,7 @@ export default defineConfig({
         'dotenv',
         'fastify',
         'child_process',
+        'fs/promises'
       ]
     }
   }
