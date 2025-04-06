@@ -7,4 +7,5 @@ export type EnvConfig = {
       endpoint: string;
     },
     scriptRootPath: string;
+    serverPort: number;
   }

@@ -20,6 +20,7 @@ const rawEnv = {
     endpoint: process.env.S3_ENDPOINT,
   },
   scriptRootPath: process.env.SCRIPT_ROOT_PATH,
+  serverPort: process.env.SERVER_PORT,
 };
 
 // Typia로 환경 변수 검증
