@@ -11,7 +11,8 @@ export default defineConfig({
       // 여러 진입점 설정
       entry: {
         nemo: resolve(__dirname, 'src/index.ts'),
-        worker: resolve(__dirname, 'src/script/worker.ts')
+        worker: resolve(__dirname, 'src/script/worker.ts'),
+        server: resolve(__dirname, 'src/server.ts')
       },
       name: 'nemo',
       formats: ['es'],
