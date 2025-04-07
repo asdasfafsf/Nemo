@@ -4,6 +4,7 @@ import { RESPONSE_PAIR } from './constants/common';
 import { loadScript, runScript } from './script/loader';
 import typia from 'typia';
 import { Request } from './types/common';
+import { NemoError } from './errors/NemoError';
 
 const fastify = Fastify();
 
@@ -40,16 +41,24 @@ fastify.post('/execute', async (request, reply) => {
             });
     }
   } catch (error) {
-    console.error(error);
+    if (error instanceof NemoError) {
+        return reply
+            .code(200)
+            .send({
+                code: error.code,
+                message: error.message,
+                techMessage: error.techMessage,
+                data: null
+            });
+    }
     return reply
-        .code(500)
+        .code(200)
         .send({
             ...RESPONSE_PAIR.ERROR
         });
   }
 });
 
-// 서버 시작
 fastify.listen({ port: env.serverPort, host: '0.0.0.0' }, (err) => {
   if (err) {
     fastify.log.error(err);
