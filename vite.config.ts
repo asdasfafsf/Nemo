@@ -12,7 +12,7 @@ export default defineConfig({
     lib: {
       // 여러 진입점 설정
       entry: {
-        // nemo: resolve(__dirname, 'src/index.ts'),
+        nemo: resolve(__dirname, 'src/index.ts'),
         worker: resolve(__dirname, 'src/script/worker.ts'),
         server: resolve(__dirname, 'src/server.ts')
       },
@@ -30,7 +30,9 @@ export default defineConfig({
         'dotenv',
         'fastify',
         'child_process',
-        'fs/promises'
+        'fs/promises',
+        'url',
+        'process'
       ]
     }
   }
