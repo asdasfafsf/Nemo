@@ -1,0 +1,14 @@
+import {
+    RESPONSE_CODE,  
+    RESPONSE_MESSAGES,
+    RESPONSE_TECH_MESSAGES,
+    RESPONSE_PAIR,
+} from './common';
+
+
+export {
+    RESPONSE_CODE,
+    RESPONSE_MESSAGES,
+    RESPONSE_TECH_MESSAGES,
+    RESPONSE_PAIR,
+}
