@@ -71,13 +71,12 @@ export const downloadScript = async ({key1, key2}: {key1: string, key2: string})
             }));
             return content;
         } catch (error: any) {
+            if (error instanceof NemoError) {
+                throw error;
+            }
             retries++;
             
-            if (retries >= MAX_RETRIES) {
-                if (error instanceof NemoError) {
-                    throw error;
-                }
-                
+            if (retries >= MAX_RETRIES) {                
                 throw new NemoError(RESPONSE_PAIR.SCRIPT_DOWNLOAD_ERROR);
             }
             
