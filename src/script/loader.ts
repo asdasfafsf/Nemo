@@ -1,6 +1,8 @@
 import { needDownload, downloadScript } from "./download";
 import { executeScript } from "./executor";
 import { Request } from "../types/common";
+import { NemoError } from "../errors/NemoError";
+import { RESPONSE_PAIR } from "../constants";
 /**
  * 스크립트를 로드하는 함수
  * @param {Object} param0 - 파라미터 객체
@@ -16,5 +18,13 @@ export const loadScript = async ({key1, key2}: {key1: string, key2: string}) => 
 };
 
 export const runScript = async (request: Request<any>) => {
-    return await executeScript(request);
+    try {
+        const result = await executeScript(request);
+        return result;
+    } catch (error) {
+        if (error instanceof NemoError) {
+            throw error;
+        }
+        throw new NemoError(RESPONSE_PAIR.ERROR, { cause: error });
+    }
 }
