@@ -8,9 +8,11 @@ dist/
 build/
 
 # 환경 설정
+*.env
 .env
 .env.local
 .env.*.local
+.env.*.*
 
 # 로그
 logs/
