@@ -3,7 +3,6 @@ import typia from 'typia';
 import { Response } from '../types';
 import process from 'process';
 
-
 const [nodePath, workerPath,scriptPath, key2, dataJson] = process.argv;
 (async function() {
     try {
@@ -20,10 +19,10 @@ const [nodePath, workerPath,scriptPath, key2, dataJson] = process.argv;
         const data = dataJson ? JSON.parse(dataJson) : {};
 
         const result = await script.nemo(data);
-        if (!typia.is<Response<any>>(result)) {
+        if (!typia.is<Response<any | null>>(result)) {
             process.stdout.write(JSON.stringify({
                 ...RESPONSE_PAIR.INVALID_OUTPUT_FORMAT,
-                data: result
+                data: result,
             }));
 
             return;
@@ -33,6 +32,7 @@ const [nodePath, workerPath,scriptPath, key2, dataJson] = process.argv;
     } catch (error) {
         process.stdout.write(JSON.stringify({
             ...RESPONSE_PAIR.ERROR,
+            techMessage: (error as Error).message ?? '정의되지 않은 오류입니다',
             data: null
         }));
     }

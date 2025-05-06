@@ -22,6 +22,7 @@ export const runScript = async (request: Request<any>) => {
         const result = await executeScript(request);
         return result;
     } catch (error) {
+        console.error(error);
         if (error instanceof NemoError) {
             throw error;
         }

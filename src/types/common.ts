@@ -21,10 +21,6 @@ export type Response<T> = {
 }
 
 
-export type ResponseCode = 
-    typeof RESPONSE_CODE[keyof typeof RESPONSE_CODE]
-    & (typia.tags.Pattern<"^[1][0-9]{5}$"> & 
-    typia.tags.MinLength<5> & 
-    typia.tags.MaxLength<5>);
+export type ResponseCode = string
 export type ResponseMessage = string;
 export type ResponseTechMessage = string;
