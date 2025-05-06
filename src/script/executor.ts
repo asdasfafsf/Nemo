@@ -40,7 +40,19 @@ export const executeScript = async (request: Request<unknown>): Promise<Response
                     path.resolve(env.scriptRootPath, `${key1}.js`),
                     key2,
                     JSON.stringify(request.data)
-                ]
+                ],
+                {
+                    cwd: process.cwd(),
+                    env: {
+                      ...process.env,
+                      S3_SECRET_KEY: undefined,
+                      S3_ACCESS_KEY: undefined,
+                      S3_BUCKET_NAME: undefined,
+                      S3_REGION: undefined,
+                      S3_ENDPOINT: undefined,
+                      NODE_PATH: path.resolve(process.cwd(), 'node_modules'),
+                    }
+                }
             );
 
         
@@ -71,12 +83,14 @@ export const executeScript = async (request: Request<unknown>): Promise<Response
                     clearTimeout(timeout);  
                     resolve({
                         ...RESPONSE_PAIR.ERROR,
+                        techMessage: data.toString(),
                         data: null
                     });
                 } catch (e) {
                     clearTimeout(timeout);  
                     resolve({
                         ...RESPONSE_PAIR.ERROR,
+                        techMessage: (e as Error).message ?? '정의되지 않은 오류입니다',
                         data: null
                     });
                 }
@@ -112,6 +126,7 @@ export const executeScript = async (request: Request<unknown>): Promise<Response
     } catch (e) {
         resolve({
             ...RESPONSE_PAIR.ERROR,
+            techMessage: (e as Error).message ?? '정의되지 않은 오류입니다',
             data: null
         })
     } finally {

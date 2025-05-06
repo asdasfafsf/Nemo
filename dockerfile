@@ -24,4 +24,18 @@ RUN npm install --omit=dev --ignore-scripts
 # 빌드 스테이지에서 생성된 dist 폴더만 복사
 COPY --from=builder /app/dist ./dist
 
+# /tmp에 node_modules 심링크 생성해서 ESM 로더가 모듈을 찾도록 함
+RUN mkdir -p /tmp \
+    && ln -s /app/node_modules /tmp/node_modules
+
+# 외부 스크립트 루트 경로
+ENV SCRIPT_ROOT_PATH=/tmp
+
+# ESM 환경에서도 node_modules를 참조하도록 설정
+ENV NODE_PATH=/app/node_modules
+
+# ESM 로더가 bare specifier를 CJS 스타일로 해석하게 하는 옵션
+ENV NODE_OPTIONS="--experimental-specifier-resolution=node"
+
+# 애플리케이션 실행
 CMD ["node", "./dist/server.js"]

@@ -61,6 +61,7 @@ fastify.post('/execute', async (request, reply) => {
 });
 
 fastify.listen({ port: env.serverPort, host: '0.0.0.0' }, (err) => {
+  console.log('Server is running on port', env.serverPort);
   if (err) {
     fastify.log.error(err);
     process.exit(1);
