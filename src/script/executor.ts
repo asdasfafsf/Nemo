@@ -89,7 +89,7 @@ export const executeScript = async (request: Request<unknown>): Promise<Response
                         data = JSON.parse(data);
                     }
 
-                    if (typia.is<Response<any>>(data)) {
+                    if (typia.is<Response<any | null>>(data)) {
                         resolve(data);
                     } else {
                         resolve({

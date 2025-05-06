@@ -32,7 +32,7 @@ fastify.post('/execute', async (request, reply) => {
         const response = await runScript(request.body);
         return reply
             .code(200)
-        .send(response);
+            .send(response);
     } else {
         return reply
             .code(400)
