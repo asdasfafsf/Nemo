@@ -41,6 +41,7 @@ fastify.post('/execute', async (request, reply) => {
             });
     }
   } catch (error) {
+    console.log(error);
     if (error instanceof NemoError) {
         return reply
             .code(200)

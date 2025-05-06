@@ -101,7 +101,8 @@ export const executeScript = async (request: Request<unknown>): Promise<Response
                     clearTimeout(timeout);  
                     resolve({
                         ...RESPONSE_PAIR.ERROR,
-                        data: null
+                        techMessage: (e as Error).message ?? '정의되지 않은 오류입니다',
+                        data: data
                     })
                 }
             });

@@ -42,3 +42,4 @@ temp/
 
 # 스크립트 캐시
 .cache/
+/data
