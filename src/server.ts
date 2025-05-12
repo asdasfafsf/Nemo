@@ -27,6 +27,7 @@ fastify.get('/health', async (request, reply) => {
 
 fastify.post('/execute', async (request, reply) => {
   try {
+    console.log(request.body);
     if (typia.is<Request<any>>(request.body)) { 
         await loadScript(request.body);
         const response = await runScript(request.body);
