@@ -25,6 +25,8 @@
     "dotenv": "^16.4.7",
     "fastify": "^5.2.2",
     "node-html-parser": "^7.0.1",
+    "puppeteer": "^24.8.2",
+    "puppeteer-core": "^24.8.2",
     "typia": "^8.2.0"
   },
   "devDependencies": {
