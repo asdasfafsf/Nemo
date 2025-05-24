@@ -33,6 +33,7 @@ export const executeScript = async (request: Request<unknown>): Promise<Response
             const config = finalConfig;
             const { key1, key2 } = request;
 
+            console.log("start spawn", {key1, key2});
             const script = spawn(
                 'node',
                 [
@@ -55,6 +56,7 @@ export const executeScript = async (request: Request<unknown>): Promise<Response
                 }
             );
 
+            console.log("spawn end", {key1, key2});
         
             const timeout = setTimeout(() => {
                 resolve({
@@ -68,6 +70,7 @@ export const executeScript = async (request: Request<unknown>): Promise<Response
 
             script.stdout.on('data', async (out) => {
                 try {   
+                    console.log("stdout", {out: out.toString()});
                     data += out;
                 } catch (e) {
                     clearTimeout(timeout);  

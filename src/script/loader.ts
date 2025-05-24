@@ -11,10 +11,15 @@ import { RESPONSE_PAIR } from "../constants";
  * @returns {Promise<void>}
  */
 export const loadScript = async ({key1, key2}: {key1: string, key2: string}) => {
+    console.log("loadScript", {key1, key2});
     const need = await needDownload({key1, key2});
     if (need) {
+        console.log("downloadScript", {key1, key2});
         await downloadScript({key1, key2});
+        console.log("downloadScript end", {key1, key2});
     } 
+
+    console.log("loadScript end", {key1, key2});
 };
 
 export const runScript = async (request: Request<any>) => {
