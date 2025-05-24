@@ -27,6 +27,7 @@
     "node-html-parser": "^7.0.1",
     "puppeteer": "^24.8.2",
     "puppeteer-core": "^24.8.2",
+    "ts-curl-impersonate": "^1.0.3",
     "typia": "^8.2.0"
   },
   "devDependencies": {

@@ -31,6 +31,7 @@ fastify.post('/execute', async (request, reply) => {
     if (typia.is<Request<any>>(request.body)) { 
         await loadScript(request.body);
         const response = await runScript(request.body);
+        console.log(response);
         return reply
             .code(200)
             .send(response);
