@@ -38,6 +38,9 @@ importers:
       puppeteer-core:
         specifier: ^24.8.2
         version: 24.8.2
+      ts-curl-impersonate:
+        specifier: ^1.0.3
+        version: 1.0.3
       typia:
         specifier: ^8.2.0
         version: 8.2.0(@samchon/openapi@3.3.0)(typescript@5.8.3)
@@ -2265,6 +2268,9 @@ packages:
   tree-kill@1.2.2:
     resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
     hasBin: true
+
+  ts-curl-impersonate@1.0.3:
+    resolution: {integrity: sha512-HoqrFCAMREqbHCCYzNnJPnKhvGAoxlcan3pd2BMlsa/Fw6kVVSqkd2nOYQbR3+GURLODgTJGNjwpF/ucKg5Cpw==}
 
   ts-node@10.9.2:
     resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
@@ -5095,6 +5101,8 @@ snapshots:
   touch@3.1.1: {}
 
   tree-kill@1.2.2: {}
+
+  ts-curl-impersonate@1.0.3: {}
 
   ts-node@10.9.2(@types/node@20.17.30)(typescript@5.8.3):
     dependencies:

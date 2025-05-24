@@ -23,6 +23,7 @@ export default defineConfig({
     target: 'node22',
     rollupOptions: {
       external: [
+        'module',
         'path',
         'fs',
         'os',
