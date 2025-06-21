@@ -67,10 +67,9 @@ export const executeScript = async (request: Request<unknown>): Promise<Response
             }, Number(config.timeout));
 
             let data = '';
-
+            script.stdout.setEncoding('utf8');
             script.stdout.on('data', async (out) => {
                 try {   
-                    console.log("stdout", {out: out.toString()});
                     data += out;
                 } catch (e) {
                     clearTimeout(timeout);  
